@@ -1,25 +1,35 @@
 package com.smartmarketlist.SmartMarketListApi.Entities;
 
-public class UserEntity {
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "tb_user")
+public abstract class UserEntity {
 	
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private String name;
-	private Integer id;
 	private String cpf;
 	private String email;
-	private String pw;
+	
 	
 	public UserEntity() {
 		
 	}
 
-	public UserEntity(String name, Integer id, String cpf, String email, String pw) {
+	public UserEntity(String name, Long id, String cpf, String email) {
 		
 		this.name = name;
 		this.id = id;
 		this.cpf = cpf;
 		this.email = email;
-		this.pw = pw;
+		
 	}
 
 	public String getName() {
@@ -30,11 +40,11 @@ public class UserEntity {
 		this.name = name;
 	}
 
-	public Integer getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
@@ -54,14 +64,9 @@ public class UserEntity {
 		this.email = email;
 	}
 
-	public String getPw() {
-		return pw;
-	}
 
-	public void setPw(String pw) {
-		this.pw = pw;
-	}
 	
+	public abstract void criaLista();
 	
 	
 	
