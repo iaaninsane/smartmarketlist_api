@@ -12,7 +12,7 @@ public class ProdutoEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Double id;
+	private Long id;
 	private String name;
 	
 	
@@ -22,7 +22,7 @@ public class ProdutoEntity {
 	}
 
 
-	public ProdutoEntity(String name, Double id) {
+	public ProdutoEntity(String name, Long id) {
 		
 		this.name = name;
 		this.id = id;
@@ -39,12 +39,12 @@ public class ProdutoEntity {
 	}
 
 
-	public Double getId() {
+	public Long getId() {
 		return id;
 	}
 
 
-	public void setId(Double id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 	

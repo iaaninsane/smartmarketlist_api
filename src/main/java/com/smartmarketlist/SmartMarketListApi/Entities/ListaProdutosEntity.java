@@ -7,7 +7,7 @@ import jakarta.persistence.Table;
 @Table(name = "tb_product_list")
 public class ListaProdutosEntity {
 	
-	private Double id;
+	private Long id;
 	private String name;
 	private UserEntity user;
 	
@@ -17,7 +17,7 @@ public class ListaProdutosEntity {
 	}
 
 
-	public ListaProdutosEntity(String name, Double id, UserEntity user) {
+	public ListaProdutosEntity(String name, Long id, UserEntity user) {
 		
 		this.name = name;
 		this.id = id;
@@ -35,12 +35,12 @@ public class ListaProdutosEntity {
 	}
 
 
-	public Double getId() {
+	public Long getId() {
 		return id;
 	}
 
 
-	public void setId(Double id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
