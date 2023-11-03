@@ -1,18 +1,23 @@
 package com.smartmarketlist.SmartMarketListApi.Entities;
 
-public class ListaEntity {
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "tb_product_list")
+public class ListaProdutosEntity {
 	
+	private Double id;
 	private String name;
-	private Integer id;
 	private UserEntity user;
 	
 	
-	public ListaEntity() {
+	public ListaProdutosEntity() {
 	
 	}
 
 
-	public ListaEntity(String name, Integer id, UserEntity user) {
+	public ListaProdutosEntity(String name, Double id, UserEntity user) {
 		
 		this.name = name;
 		this.id = id;
@@ -30,12 +35,12 @@ public class ListaEntity {
 	}
 
 
-	public Integer getId() {
+	public Double getId() {
 		return id;
 	}
 
 
-	public void setId(Integer id) {
+	public void setId(Double id) {
 		this.id = id;
 	}
 
