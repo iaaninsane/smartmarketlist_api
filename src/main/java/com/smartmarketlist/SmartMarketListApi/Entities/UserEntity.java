@@ -1,6 +1,8 @@
 package com.smartmarketlist.SmartMarketListApi.Entities;
 
 
+import com.smartmarketlist.SmartMarketListApi.Enums.TypeUser;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -9,7 +11,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_user")
-public abstract class UserEntity {
+public class UserEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,20 +19,23 @@ public abstract class UserEntity {
 	private String name;
 	private String cpf;
 	private String email;
+	private TypeUser typeUser;
 	
 	
 	public UserEntity() {
 		
 	}
 
-	public UserEntity(String name, Long id, String cpf, String email) {
+	public UserEntity(Long id, String name, String cpf, String email,TypeUser typeUser) {
 		
 		this.name = name;
 		this.id = id;
 		this.cpf = cpf;
 		this.email = email;
+		this.typeUser = typeUser;
 		
 	}
+
 
 	public String getName() {
 		return name;
@@ -63,10 +68,20 @@ public abstract class UserEntity {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public TypeUser getTypeUser() {
+		return typeUser;
+	}
+
+	public void setTypeUser(TypeUser typeUser) {
+		this.typeUser = typeUser;
+	}
 
 
 	
-	public abstract void criaLista();
+	public void criaLista() {
+		
+	};
 	
 	
 	
