@@ -22,7 +22,7 @@ public class ProdutoEntity {
 	}
 
 
-	public ProdutoEntity(String name, Long id) {
+	public ProdutoEntity(Long id, String name) {
 		
 		this.name = name;
 		this.id = id;
