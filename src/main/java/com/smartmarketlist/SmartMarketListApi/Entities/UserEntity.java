@@ -21,7 +21,6 @@ public class UserEntity {
 	private String email;
 	private TypeUser typeUser;
 	
-	
 	public UserEntity() {
 		
 	}
@@ -80,7 +79,7 @@ public class UserEntity {
 
 	
 	public void criaLista() {
-		
+		System.out.println("criei a lista");
 	};
 	
 	
