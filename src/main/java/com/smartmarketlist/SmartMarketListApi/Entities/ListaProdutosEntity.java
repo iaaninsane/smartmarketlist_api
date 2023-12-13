@@ -1,13 +1,24 @@
 package com.smartmarketlist.SmartMarketListApi.Entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 
-
+@Entity
+@Table(name = "tb_lista")
 public class ListaProdutosEntity {
 	
 	
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
+	@ManyToOne
+	@JoinColumn(name="user_id")
 	private UserEntity userEntity;
 	
 	
@@ -16,10 +27,10 @@ public class ListaProdutosEntity {
 	}
 
 
-	public ListaProdutosEntity(String name, Long id, UserEntity user) {
+	public ListaProdutosEntity(Long id, String name, UserEntity user) {
 		
-		this.name = name;
 		this.id = id;
+		this.name = name;
 		this.userEntity = user;
 	}
 

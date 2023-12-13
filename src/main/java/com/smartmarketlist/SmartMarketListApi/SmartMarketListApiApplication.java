@@ -7,9 +7,11 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.smartmarketlist.SmartMarketListApi.Entities.ListaProdutosEntity;
 import com.smartmarketlist.SmartMarketListApi.Entities.ProdutoEntity;
 import com.smartmarketlist.SmartMarketListApi.Entities.UserEntity;
 import com.smartmarketlist.SmartMarketListApi.Enums.TypeUser;
+import com.smartmarketlist.SmartMarketListApi.Repositories.ListaProdutosRepository;
 import com.smartmarketlist.SmartMarketListApi.Repositories.ProdutoRepository;
 import com.smartmarketlist.SmartMarketListApi.Repositories.UserRepository;
 
@@ -18,8 +20,12 @@ public class SmartMarketListApiApplication implements CommandLineRunner {
 	
 	@Autowired
 	private UserRepository userRepository;
+	
 	@Autowired
 	private ProdutoRepository produtoRepository;
+	
+	@Autowired
+	private ListaProdutosRepository listaProdutosRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(SmartMarketListApiApplication.class, args);
@@ -39,7 +45,13 @@ public class SmartMarketListApiApplication implements CommandLineRunner {
 		ProdutoEntity produto2 = new ProdutoEntity(null, "Massa");
 		ProdutoEntity produto3 = new ProdutoEntity(null, "Feijão");
 		
-		produtoRepository.saveAll(Arrays.asList(produto1,produto2,produto3));;
+		produtoRepository.saveAll(Arrays.asList(produto1,produto2,produto3));
+		
+		ListaProdutosEntity lista1 = new ListaProdutosEntity(null, "Produtos de Higiene", usuario1);
+		ListaProdutosEntity lista2 = new ListaProdutosEntity(null, "Produtos de Cozinha", usuario1);
+		ListaProdutosEntity lista3 = new ListaProdutosEntity(null, "cesta básica", usuario2);
+		
+		listaProdutosRepository.saveAll(Arrays.asList(lista1,lista2,lista3));
 	}
 
 	
