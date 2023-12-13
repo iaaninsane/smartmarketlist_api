@@ -1,5 +1,7 @@
 package com.smartmarketlist.SmartMarketListApi;
 
+import java.util.Arrays;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -27,13 +29,17 @@ public class SmartMarketListApiApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		
 		UserEntity usuario1 = new UserEntity(null, "João Lacerda", "9985221147", "joaolacerda@gmail.com",TypeUser.FREE_USER);
+		UserEntity usuario2 = new UserEntity(null, "Elvis Presley", "9985229999", "qqcoisa@gmail.com",TypeUser.FREE_USER);
+		UserEntity usuario3 = new UserEntity(null, "Batman da Silva", "999999999", "batman@gmail.com",TypeUser.PREMIUM_USER);
 		
-		userRepository.save(usuario1);
+		userRepository.saveAll(Arrays.asList(usuario1,usuario2,usuario3));
 		
 		
-		ProdutoEntity Produto1 = new ProdutoEntity(null, "Açucar");
+		ProdutoEntity produto1 = new ProdutoEntity(null, "Açucar");
+		ProdutoEntity produto2 = new ProdutoEntity(null, "Massa");
+		ProdutoEntity produto3 = new ProdutoEntity(null, "Feijão");
 		
-		produtoRepository.save(Produto1);
+		produtoRepository.saveAll(Arrays.asList(produto1,produto2,produto3));;
 	}
 
 	
