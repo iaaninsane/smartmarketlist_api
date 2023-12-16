@@ -1,9 +1,13 @@
 package com.smartmarketlist.SmartMarketListApi.Entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -14,8 +18,13 @@ public class ItemDaListaEntity {
 	private Long id;
 	private Integer qtd; 
 	
+	@ManyToOne
+	@JoinColumn(name="produto_id")
 	private ProdutoEntity produtoEntity;
 	
+	@JsonIgnore
+	@ManyToOne
+	@JoinColumn(name="lista_id")
 	private ListaProdutosEntity listaProdutosEntity;
 
 	
