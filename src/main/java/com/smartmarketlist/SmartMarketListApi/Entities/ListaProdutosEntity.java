@@ -1,11 +1,15 @@
 package com.smartmarketlist.SmartMarketListApi.Entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -20,6 +24,9 @@ public class ListaProdutosEntity {
 	@ManyToOne
 	@JoinColumn(name="user_id")
 	private UserEntity userEntity;
+	
+	@OneToMany(mappedBy = "listaProdutosEntity")
+	private List<ItemDaListaEntity> itemDaListaEntity = new ArrayList<>();
 	
 	
 	public ListaProdutosEntity() {
@@ -62,6 +69,21 @@ public class ListaProdutosEntity {
 
 	public void setUser(UserEntity user) {
 		this.userEntity = user;
+	}
+
+
+	public UserEntity getUserEntity() {
+		return userEntity;
+	}
+
+
+	public void setUserEntity(UserEntity userEntity) {
+		this.userEntity = userEntity;
+	}
+
+
+	public List<ItemDaListaEntity> getItemDaListaEntity() {
+		return itemDaListaEntity;
 	}
 	
 	
