@@ -51,7 +51,7 @@ public class SmartMarketListApiApplication implements CommandLineRunner {
 		ProdutoEntity produto3 = new ProdutoEntity(null, "Desinfetante");
 		ProdutoEntity produto4 = new ProdutoEntity(null, "Detergente");
 	
-		produtoRepository.saveAll(Arrays.asList(produto1,produto2,produto3));
+		produtoRepository.saveAll(Arrays.asList(produto1,produto2,produto3,produto4));
 		
 		ListaProdutosEntity lista1 = new ListaProdutosEntity(null, "Produtos de Higiene", usuario1);
 		ListaProdutosEntity lista2 = new ListaProdutosEntity(null, "Produtos de Cozinha", usuario1);
@@ -63,6 +63,8 @@ public class SmartMarketListApiApplication implements CommandLineRunner {
 		ItemDaListaEntity itemLista2 = new ItemDaListaEntity(null, 3, produto2, lista3);
 		ItemDaListaEntity itemLista3 = new ItemDaListaEntity(null, 4, produto3, lista1);
 		ItemDaListaEntity itemLista4 = new ItemDaListaEntity(null, 2, produto4, lista2);
+		
+		//itemDaListaRepository.saveAll(Arrays.asList(itemLista1,itemLista2,itemLista4));
 		
 		itemDaListaRepository.saveAll(Arrays.asList(itemLista1,itemLista2,itemLista3,itemLista4));
 	
