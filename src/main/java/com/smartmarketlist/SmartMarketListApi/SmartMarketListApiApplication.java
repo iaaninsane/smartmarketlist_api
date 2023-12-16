@@ -64,8 +64,6 @@ public class SmartMarketListApiApplication implements CommandLineRunner {
 		ItemDaListaEntity itemLista3 = new ItemDaListaEntity(null, 4, produto3, lista1);
 		ItemDaListaEntity itemLista4 = new ItemDaListaEntity(null, 2, produto4, lista2);
 		
-		//itemDaListaRepository.saveAll(Arrays.asList(itemLista1,itemLista2,itemLista4));
-		
 		itemDaListaRepository.saveAll(Arrays.asList(itemLista1,itemLista2,itemLista3,itemLista4));
 	
 		
