@@ -7,10 +7,12 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import com.smartmarketlist.SmartMarketListApi.Entities.ItemDaListaEntity;
 import com.smartmarketlist.SmartMarketListApi.Entities.ListaProdutosEntity;
 import com.smartmarketlist.SmartMarketListApi.Entities.ProdutoEntity;
 import com.smartmarketlist.SmartMarketListApi.Entities.UserEntity;
 import com.smartmarketlist.SmartMarketListApi.Enums.TypeUser;
+import com.smartmarketlist.SmartMarketListApi.Repositories.ItemDaListaRepository;
 import com.smartmarketlist.SmartMarketListApi.Repositories.ListaProdutosRepository;
 import com.smartmarketlist.SmartMarketListApi.Repositories.ProdutoRepository;
 import com.smartmarketlist.SmartMarketListApi.Repositories.UserRepository;
@@ -26,6 +28,9 @@ public class SmartMarketListApiApplication implements CommandLineRunner {
 	
 	@Autowired
 	private ListaProdutosRepository listaProdutosRepository;
+	
+	@Autowired
+	private ItemDaListaRepository itemDaListaRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(SmartMarketListApiApplication.class, args);
@@ -43,8 +48,9 @@ public class SmartMarketListApiApplication implements CommandLineRunner {
 		
 		ProdutoEntity produto1 = new ProdutoEntity(null, "Açucar");
 		ProdutoEntity produto2 = new ProdutoEntity(null, "Massa");
-		ProdutoEntity produto3 = new ProdutoEntity(null, "Feijão");
-		
+		ProdutoEntity produto3 = new ProdutoEntity(null, "Desinfetante");
+		ProdutoEntity produto4 = new ProdutoEntity(null, "Detergente");
+	
 		produtoRepository.saveAll(Arrays.asList(produto1,produto2,produto3));
 		
 		ListaProdutosEntity lista1 = new ListaProdutosEntity(null, "Produtos de Higiene", usuario1);
@@ -52,6 +58,16 @@ public class SmartMarketListApiApplication implements CommandLineRunner {
 		ListaProdutosEntity lista3 = new ListaProdutosEntity(null, "cesta básica", usuario2);
 		
 		listaProdutosRepository.saveAll(Arrays.asList(lista1,lista2,lista3));
+		
+		ItemDaListaEntity itemLista1 = new ItemDaListaEntity(null, 1, produto1, lista3);
+		ItemDaListaEntity itemLista2 = new ItemDaListaEntity(null, 3, produto2, lista3);
+		ItemDaListaEntity itemLista3 = new ItemDaListaEntity(null, 4, produto3, lista1);
+		ItemDaListaEntity itemLista4 = new ItemDaListaEntity(null, 2, produto4, lista2);
+		
+		itemDaListaRepository.saveAll(Arrays.asList(itemLista1,itemLista2,itemLista3,itemLista4));
+	
+		
+		
 	}
 
 	
