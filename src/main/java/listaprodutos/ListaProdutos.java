@@ -1,8 +1,9 @@
-package entities;
+package listaprodutos;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import itemdalista.ItemDaLista;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -11,6 +12,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import user.User;
 
 @Entity
 @Table(name = "tb_lista")

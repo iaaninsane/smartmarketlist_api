@@ -1,4 +1,4 @@
-package entities;
+package itemdalista;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -9,6 +9,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import listaprodutos.ListaProdutos;
+import produto.Produto;
 
 @Entity
 @Table(name = "tb_item_da_lista")

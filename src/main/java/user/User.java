@@ -1,7 +1,6 @@
-package entities;
+package user;
 
 
-import enums.TypeUser;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

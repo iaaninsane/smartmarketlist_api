@@ -1,4 +1,4 @@
-package enums;
+package user;
 
 public enum TypeUser {
 	

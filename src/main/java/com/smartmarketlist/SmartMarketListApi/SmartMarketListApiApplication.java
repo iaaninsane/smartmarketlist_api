@@ -7,15 +7,15 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import entities.ItemDaLista;
-import entities.ListaProdutos;
-import entities.Produto;
-import entities.User;
-import enums.TypeUser;
-import repositories.ItemDaListaRepository;
-import repositories.ListaProdutosRepository;
-import repositories.ProdutoRepository;
-import repositories.UserRepository;
+import itemdalista.ItemDaLista;
+import itemdalista.ItemDaListaRepository;
+import listaprodutos.ListaProdutos;
+import listaprodutos.ListaProdutosRepository;
+import produto.Produto;
+import produto.ProdutoRepository;
+import user.TypeUser;
+import user.User;
+import user.UserRepository;
 
 @SpringBootApplication
 public class SmartMarketListApiApplication implements CommandLineRunner {
