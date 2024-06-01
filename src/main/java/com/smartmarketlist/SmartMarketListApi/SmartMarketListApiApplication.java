@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import com.smartmarketlist.SmartMarketListApi.Entities.ItemDaListaEntity;
 import com.smartmarketlist.SmartMarketListApi.Entities.ListaProdutosEntity;
 import com.smartmarketlist.SmartMarketListApi.Entities.ProdutoEntity;
-import com.smartmarketlist.SmartMarketListApi.Entities.UserEntity;
+import com.smartmarketlist.SmartMarketListApi.Entities.User;
 import com.smartmarketlist.SmartMarketListApi.Enums.TypeUser;
 import com.smartmarketlist.SmartMarketListApi.Repositories.ItemDaListaRepository;
 import com.smartmarketlist.SmartMarketListApi.Repositories.ListaProdutosRepository;
@@ -39,9 +39,9 @@ public class SmartMarketListApiApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		
-		UserEntity usuario1 = new UserEntity(null, "João Lacerda", "9985221147", "joaolacerda@gmail.com",TypeUser.FREE_USER);
-		UserEntity usuario2 = new UserEntity(null, "Elvis Presley", "9985229999", "qqcoisa@gmail.com",TypeUser.FREE_USER);
-		UserEntity usuario3 = new UserEntity(null, "Batman da Silva", "999999999", "batman@gmail.com",TypeUser.PREMIUM_USER);
+		User usuario1 = new User(null, "João Lacerda", "9985221147", "joaolacerda@gmail.com",TypeUser.FREE_USER);
+		User usuario2 = new User(null, "Elvis Presley", "9985229999", "qqcoisa@gmail.com",TypeUser.FREE_USER);
+		User usuario3 = new User(null, "Batman da Silva", "999999999", "batman@gmail.com",TypeUser.PREMIUM_USER);
 		
 		userRepository.saveAll(Arrays.asList(usuario1,usuario2,usuario3));
 		

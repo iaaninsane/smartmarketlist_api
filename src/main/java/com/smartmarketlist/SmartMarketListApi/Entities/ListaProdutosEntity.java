@@ -23,7 +23,7 @@ public class ListaProdutosEntity {
 	private String name;
 	@ManyToOne
 	@JoinColumn(name="user_id")
-	private UserEntity userEntity;
+	private User userEntity;
 	
 	@OneToMany(mappedBy = "listaProdutosEntity")
 	private List<ItemDaListaEntity> itemDaListaEntity = new ArrayList<>();
@@ -34,7 +34,7 @@ public class ListaProdutosEntity {
 	}
 
 
-	public ListaProdutosEntity(Long id, String name, UserEntity user) {
+	public ListaProdutosEntity(Long id, String name, User user) {
 		
 		this.id = id;
 		this.name = name;
@@ -62,22 +62,22 @@ public class ListaProdutosEntity {
 	}
 
 
-	public UserEntity getUser() {
+	public User getUser() {
 		return userEntity;
 	}
 
 
-	public void setUser(UserEntity user) {
+	public void setUser(User user) {
 		this.userEntity = user;
 	}
 
 
-	public UserEntity getUserEntity() {
+	public User getUserEntity() {
 		return userEntity;
 	}
 
 
-	public void setUserEntity(UserEntity userEntity) {
+	public void setUserEntity(User userEntity) {
 		this.userEntity = userEntity;
 	}
 
