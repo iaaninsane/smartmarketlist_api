@@ -1,8 +1,7 @@
-package com.smartmarketlist.SmartMarketListApi.Entities;
+package entities;
 
 
-import com.smartmarketlist.SmartMarketListApi.Enums.TypeUser;
-
+import enums.TypeUser;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;

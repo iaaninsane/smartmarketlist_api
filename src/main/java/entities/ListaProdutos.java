@@ -1,4 +1,4 @@
-package com.smartmarketlist.SmartMarketListApi.Entities;
+package entities;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_lista")
-public class ListaProdutosEntity {
+public class ListaProdutos {
 	
 	
 	@Id
@@ -26,15 +26,15 @@ public class ListaProdutosEntity {
 	private User userEntity;
 	
 	@OneToMany(mappedBy = "listaProdutosEntity")
-	private List<ItemDaListaEntity> itemDaListaEntity = new ArrayList<>();
+	private List<ItemDaLista> itemDaListaEntity = new ArrayList<>();
 	
 	
-	public ListaProdutosEntity() {
+	public ListaProdutos() {
 	
 	}
 
 
-	public ListaProdutosEntity(Long id, String name, User user) {
+	public ListaProdutos(Long id, String name, User user) {
 		
 		this.id = id;
 		this.name = name;
@@ -82,7 +82,7 @@ public class ListaProdutosEntity {
 	}
 
 
-	public List<ItemDaListaEntity> getItemDaListaEntity() {
+	public List<ItemDaLista> getItemDaListaEntity() {
 		return itemDaListaEntity;
 	}
 	

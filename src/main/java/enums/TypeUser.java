@@ -1,4 +1,4 @@
-package com.smartmarketlist.SmartMarketListApi.Enums;
+package enums;
 
 public enum TypeUser {
 	

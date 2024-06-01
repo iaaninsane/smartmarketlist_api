@@ -1,4 +1,4 @@
-package com.smartmarketlist.SmartMarketListApi.Entities;
+package entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -12,7 +12,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_item_da_lista")
-public class ItemDaListaEntity {
+public class ItemDaLista {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -20,22 +20,22 @@ public class ItemDaListaEntity {
 	
 	@ManyToOne
 	@JoinColumn(name="produto_id")
-	private ProdutoEntity produtoEntity;
+	private Produto produtoEntity;
 	
 	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="lista_id")
-	private ListaProdutosEntity listaProdutosEntity;
+	private ListaProdutos listaProdutosEntity;
 
 	
 	
-	public ItemDaListaEntity() {
+	public ItemDaLista() {
 		
 	}
 
 
-	public ItemDaListaEntity(Long id, Integer qtd, ProdutoEntity produtoEntity,
-			ListaProdutosEntity listaProdutosEntity) {
+	public ItemDaLista(Long id, Integer qtd, Produto produtoEntity,
+			ListaProdutos listaProdutosEntity) {
 		
 		this.id = id;
 		this.qtd = qtd;
@@ -64,22 +64,22 @@ public class ItemDaListaEntity {
 	}
 
 
-	public ProdutoEntity getProdutoEntity() {
+	public Produto getProdutoEntity() {
 		return produtoEntity;
 	}
 
 
-	public void setProdutoEntity(ProdutoEntity produtoEntity) {
+	public void setProdutoEntity(Produto produtoEntity) {
 		this.produtoEntity = produtoEntity;
 	}
 
 
-	public ListaProdutosEntity getListaProdutosEntity() {
+	public ListaProdutos getListaProdutosEntity() {
 		return listaProdutosEntity;
 	}
 
 
-	public void setListaProdutosEntity(ListaProdutosEntity listaProdutosEntity) {
+	public void setListaProdutosEntity(ListaProdutos listaProdutosEntity) {
 		this.listaProdutosEntity = listaProdutosEntity;
 	}
 	

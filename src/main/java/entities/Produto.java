@@ -1,4 +1,4 @@
-package com.smartmarketlist.SmartMarketListApi.Entities;
+package entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "tb_product")
-public class ProdutoEntity {
+public class Produto {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,12 +17,12 @@ public class ProdutoEntity {
 	
 	
 	
-	public ProdutoEntity() {
+	public Produto() {
 		
 	}
 
 
-	public ProdutoEntity(Long id, String name) {
+	public Produto(Long id, String name) {
 		
 		this.name = name;
 		this.id = id;
