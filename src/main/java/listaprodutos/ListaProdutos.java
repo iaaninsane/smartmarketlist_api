@@ -25,10 +25,10 @@ public class ListaProdutos {
 	private String name;
 	@ManyToOne
 	@JoinColumn(name="user_id")
-	private User userEntity;
+	private User user;
 	
-	@OneToMany(mappedBy = "listaProdutosEntity")
-	private List<ItemDaLista> itemDaListaEntity = new ArrayList<>();
+	@OneToMany
+	private List<ItemDaLista> itemDaLista = new ArrayList<>();
 	
 	
 	public ListaProdutos() {
@@ -40,7 +40,7 @@ public class ListaProdutos {
 		
 		this.id = id;
 		this.name = name;
-		this.userEntity = user;
+		this.user = user;
 	}
 
 
@@ -65,27 +65,27 @@ public class ListaProdutos {
 
 
 	public User getUser() {
-		return userEntity;
+		return user;
 	}
 
 
 	public void setUser(User user) {
-		this.userEntity = user;
+		this.user = user;
 	}
 
 
 	public User getUserEntity() {
-		return userEntity;
+		return user;
 	}
 
 
-	public void setUserEntity(User userEntity) {
-		this.userEntity = userEntity;
+	public void setUserEntity(User user) {
+		this.user = user;
 	}
 
 
-	public List<ItemDaLista> getItemDaListaEntity() {
-		return itemDaListaEntity;
+	public List<ItemDaLista> getItemDaLista() {
+		return itemDaLista;
 	}
 	
 	

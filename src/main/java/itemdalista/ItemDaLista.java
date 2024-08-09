@@ -22,12 +22,12 @@ public class ItemDaLista {
 	
 	@ManyToOne
 	@JoinColumn(name="produto_id")
-	private Produto produtoEntity;
+	private Produto produto;
 	
 	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="lista_id")
-	private ListaProdutos listaProdutosEntity;
+	private ListaProdutos listaProdutos;
 
 	
 	
@@ -36,13 +36,13 @@ public class ItemDaLista {
 	}
 
 
-	public ItemDaLista(Long id, Integer qtd, Produto produtoEntity,
-			ListaProdutos listaProdutosEntity) {
+	public ItemDaLista(Long id, Integer qtd, Produto produto,
+			ListaProdutos listaProdutos) {
 		
 		this.id = id;
 		this.qtd = qtd;
-		this.produtoEntity = produtoEntity;
-		this.listaProdutosEntity = listaProdutosEntity;
+		this.produto = produto;
+		this.listaProdutos = listaProdutos;
 	}
 
 
@@ -66,23 +66,23 @@ public class ItemDaLista {
 	}
 
 
-	public Produto getProdutoEntity() {
-		return produtoEntity;
+	public Produto getProduto() {
+		return produto;
 	}
 
 
-	public void setProdutoEntity(Produto produtoEntity) {
-		this.produtoEntity = produtoEntity;
+	public void setProduto(Produto produto) {
+		this.produto = produto;
 	}
 
 
-	public ListaProdutos getListaProdutosEntity() {
-		return listaProdutosEntity;
+	public ListaProdutos getListaProdutos() {
+		return listaProdutos;
 	}
 
 
-	public void setListaProdutosEntity(ListaProdutos listaProdutosEntity) {
-		this.listaProdutosEntity = listaProdutosEntity;
+	public void setListaProdutosEntity(ListaProdutos listaProdutos) {
+		this.listaProdutos = listaProdutos;
 	}
 	
 	
